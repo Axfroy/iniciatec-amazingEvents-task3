@@ -7,12 +7,13 @@
 
 .link-icons:hover{
     background-color: rgb(141, 26, 45) !important;
+    transition: .5s ease-out;
  }
-
-.active{
+.nav-link:hover{
     border-radius: 5px;
     background-color: rgb(141, 26, 45);
-}
+    transition: .5s ease-out;
+ }
 
 .navbar-collapse{
     flex-grow: 0;
@@ -22,15 +23,27 @@
     color: rgb(192, 17, 90) !important;
 }
 
-.main-title:hover{
+.main-title{
+    cursor: pointer;
     color: rgb(192, 17, 90) !important;
+}
+.main-title:hover{
+    color: rgb(220, 27, 108) !important;
+    transition: .5s ease-in;
 }
 
 .form-select{
     display: none;
 }
+
 .search-btn:hover{
+    --bs-btn-hover-border-color: none;
     background-color: rgb(192, 17, 90) !important;
+}
+
+.btn-outline-success{
+    color: black;
+    --bs-btn-border-color: black;
 }
 
 .detailCtn-image{
@@ -42,9 +55,29 @@
     height: auto;
 }
 
-
 .form-ctn{
     border-radius: 10px;
+}
+
+.card-img{
+    border-radius: 15px 15px 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-btn{
+    background-color: rgb(141, 26, 45) !important;
+    border: none;
+}
+.card-btn:hover{
+    background-color: rgb(195, 33, 60) !important;
+}
+.card-price{
+    color: rgb(141, 26, 45);
+}
+
+#cards{
+    margin: 20px 0 20px 20px;
 }
 
 @media screen and (max-width: 1024px){
