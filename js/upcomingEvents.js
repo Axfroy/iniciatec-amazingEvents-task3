@@ -6,7 +6,10 @@ console.log("actualDateStamp", actualDateStamp)
 
 function dateConvert(date) {
     eventDateSplit = date.split("-");
-    eventDateParsed = new Date(eventDateSplit[0],eventDateSplit[1]-1,eventDateSplit[2]);
+    eventDateParsed = new Date(
+        eventDateSplit[0],
+        eventDateSplit[1]-1,
+        eventDateSplit[2]);
     eventDateStamp = eventDateParsed.getTime();
     return eventDateStamp;
 }

@@ -1,12 +1,13 @@
+// Set actual date for compare
 const dateSplit = data.fechaActual.split("-");
 const dateToCompareParsed = new Date(dateSplit[0], dateSplit[1]-1, dateSplit[2]);
 const actualDateStamp = dateToCompareParsed.getTime();
 console.log("actualDateStamp", actualDateStamp)
 
 function dateConvert(date) {
-    dateEventSplit = date.split("-");
-    dateEventParsed = new Date(dateEventSplit[0],dateEventSplit[1]-1,dateEventSplit[2]);
-    eventDateStamp = dateEventParsed.getTime();
+    eventDateSplited = date.split("-");
+    eventDateParsed = new Date(eventDateSplited[0],eventDateSplited[1]-1,eventDateSplited[2]);
+    eventDateStamp = eventDateParsed.getTime();
     return eventDateStamp;
 }
 
@@ -16,8 +17,7 @@ data.eventos.map(event =>{
   dateConvert(event.date) < actualDateStamp ? pastEvents.push(event) : upComingEvents.push(event)
 })
 
-
-function generatePastCards(events) {
+function generateCards(events) {
     let card = "";
     let cardEvents = document.getElementById("cards");
 
@@ -41,32 +41,4 @@ function generatePastCards(events) {
     cardEvents.innerHTML = card;
 }
 
-generatePastCards(pastEvents)
-
-/* function paintPastEvents(users) {
-    let body ="";
-
-    const cardEvents = document.getElementById("cards")
-    
-    for (let i = 0; i < users.length; i++){
-            body += `
-            <div class=" card col-md-3 mx-3" style="width: 18rem";>
-                <img src="${users[i].image}" class="card-img-top p-2" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${users[i].name}</h5>
-                    <p class="card-text">${users[i].description}</p>
-                    <a href="./pages/details.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        `;
-        }
-        cardEvents.innerHTML = body;
-    }
-
-paintPastEvents(pastEvents) */
-/* for (let i = 0; i < data.eventos.length; i++) {
-    if(data.eventos[i].date < data.fechaActual){
-      console.log("pasa")
-    }
-  } */
-
+generateCards(pastEvents)
