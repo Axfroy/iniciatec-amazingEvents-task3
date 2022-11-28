@@ -67,4 +67,54 @@ noResult = () =>{
             <p>Please try another search</p>
         </div>
         `;
-}
+};
+
+
+// Checkbox Filter    
+const checkboxCtn = document.getElementById("formCheck-ctn");
+const inputsCheckbox = document.querySelectorAll(".form-check-input");
+const formSelect = document.getElementById("form-select");
+const inputOption = document.querySelectorAll(".option-input");
+
+checkboxCtn.addEventListener("change", () => {
+    var categoriesChecked = [];
+
+    inputsCheckbox.forEach((inputBox) =>{
+        inputBox.checked
+            ? categoriesChecked.push(inputBox.value)
+            : null
+    });
+    
+    cardsFilter(categoriesChecked);
+    noSelect(categoriesChecked);
+});
+
+formSelect.addEventListener("change", () =>{
+    var categoriesChecked = [];
+
+    inputOption.forEach((option) =>{
+        option.selected
+            ? categoriesChecked.push(option.value)
+            : null
+    });
+
+    cardsFilter(categoriesChecked);
+    noSelect(categoriesChecked);
+
+});
+
+cardsFilter = (filteredArray) => {
+    allCards.forEach((card) => {
+        filteredArray.includes(card.getAttribute("data-category"))
+            ? card.classList.remove("hidden")
+            : card.classList.add("hidden");
+    });
+};
+
+noSelect = (filteredArray) => {
+    filteredArray.length === 0
+    ? allCards.forEach((card) => {
+        card.classList.remove("hidden")
+        })
+    : null
+};
