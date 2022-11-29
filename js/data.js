@@ -149,7 +149,7 @@ const data={
           "name":"Avengers",
           "date":"2022-10-15",
           "description":"Marvel's Avengers Premier in 3d, the start of an epic saga with your favourite superheroes.",
-          "category":"Cinema",
+        "category":"?=",
           "place":"Room D1",
           "capacity":9000,
           "estimate":9000,

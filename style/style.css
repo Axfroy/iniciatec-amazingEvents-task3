@@ -5,6 +5,10 @@
     text-decoration: none;
 }
 
+.hidden{
+    display: none;
+}
+
 .link-icons:hover{
     background-color: rgb(141, 26, 45) !important;
     transition: .5s ease-out;
