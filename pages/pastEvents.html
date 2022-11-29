@@ -58,54 +58,69 @@
               </svg>
           </a>
       </div>
-    <!-- Category Filter -->
-      <div class="d-flex justify-content-between align-items-center p-2 px-5 bg-light shadow-sm">
+     <!-- Category Filter -->
+     <div class="d-flex justify-content-between align-items-center p-2 px-5 bg-light shadow-sm">
       <div>
-          <div class="form-check-ctn">
+          <div id="formCheck-ctn" class="form-check-ctn formCheck-ctn">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                <label class="form-check-label" for="inlineCheckbox1">Category</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Food Fair">
+                <label class="form-check-label" for="inlineCheckbox1">Food Fair</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                <label class="form-check-label" for="inlineCheckbox2">Category</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Museum">
+                <label class="form-check-label" for="inlineCheckbox2">Museum</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option3">
-                <label class="form-check-label" for="inlineCheckbox1">Category</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Costume Party">
+                <label class="form-check-label" for="inlineCheckbox3">Costume Party</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option4">
-                <label class="form-check-label" for="inlineCheckbox2">Category</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Music Concert">
+                <label class="form-check-label" for="inlineCheckbox4">Music Concert</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option5">
-                <label class="form-check-label" for="inlineCheckbox2">Category</label>
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Race">
+                <label class="form-check-label" for="inlineCheckbox5">Race</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Book Exchange">
+                <label class="form-check-label" for="inlineCheckbox6">Book Exchange</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Cinema">
+                <label class="form-check-label" for="inlineCheckbox7">Cinema</label>
               </div>
           </div>
-            <div class="col-md-12">
-              <select class="form-select" id="specificSizeSelect">
-                <option selected>Choose...</option>
-                <option value="1">Category</option>
-                <option value="2">Category</option>
-                <option value="3">Category</option>
-                <option value="4">Category</option>
-                <option value="5">Category</option>
+<!--               <div>
+            <p class="" id="clearCategories">Clear categories</p>
+          </div> -->
+            <div class="col-xs-12" style="margin-right: 10px;">
+              <select class="form-select" id="form-select">
+                <option selected>All Categories</option>
+                <option class="option-input" value="Food Fair">Food Fair</option>
+                <option class="option-input" value="Museum">Museum</option>
+                <option class="option-input" value="Costume Party">Costume Party</option>
+                <option class="option-input" value="Music Concert">Music Concert</option>
+                <option class="option-input" value="Race">Race</option>
+                <option class="option-input" value="Book Exchange">Book Exchange</option>
+                <option class="option-input" value="Cinema">Cinema</option>
               </select>
             </div>
       </div>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="search-btn btn btn-outline-success pt-1" type="submit">
+        <input class="form-control me-2" id="input-search-events" type="search" placeholder="Search" aria-label="Search">
+        <button class="search-btn btn btn-outline-success pt-1">
           <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
           </svg>
         </button>
       </form>
-      </div>
-    <!-- Events Cards -->
-      <div id="cards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 gy-4 justify-content-center mx-2">
-      </div>
+  </div>
+<!-- Events Cards -->
+
+    <div id="cards" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 gy-4 justify-content-center mx-2">
+  </div>
+  <div id="no" class="row justify-content-center mx-2"></div>
     </main>
     <footer class="bg-black d-flex justify-content-between align-items-center px-4 mt-auto">
       <div class="p-2 d-flex">

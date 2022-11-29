@@ -27,14 +27,10 @@ generateCards(data)
 
 const allCards = document.querySelectorAll(".card-ctn")
 
-
 // input Search Filter
 const inputSearchEvents = document.getElementById("input-search-events");
-console.log("inputsearch", inputSearchEvents)
-
 
 inputSearchEvents.addEventListener("keyup", (event) =>{
-    let arrayContentCardHidden = [];
     const cardContainer = document.getElementById("no");
     let msg = ``;
     //let allCardsArray = Array.prototype.slice.call(allCards);
@@ -48,10 +44,6 @@ inputSearchEvents.addEventListener("keyup", (event) =>{
             .includes(event.target.value.toLowerCase())
                 ? card.classList.remove("hidden")
                 : card.classList.add("hidden");
-
-/*             if(card.classList.contains("hidden")){
-                arrayContentCardHidden.push(card)
-                }*/
             }); 
 let eventResult = document.querySelectorAll(".hidden");
 
@@ -67,32 +59,6 @@ let eventResult = document.querySelectorAll(".hidden");
         }
     cardContainer.innerHTML = msg;
 });
-
-/* inputSearch.addEventListener("keyup", (event) =>{
-    let arrayContentCardHidden = [];
-    const menssageErr = document.getElementById("menssageError")
-    let menssagge= ``
-    cardsAll.forEach((card) => {
-  
-      card.textContent.toLowerCase().includes(event.target.value.toLowerCase())
-      ? card.classList.remove("hidden") // Si cae en true la sentencia anterior, ocurre esto
-      : card.classList.add("hidden") // Si cae en false la sentencia anterior, ocurre esto
-  
-      if(card.classList.contains("hidden")){
-        arrayContentCardHidden.push(card)
-      }
-    })
-  
-    if(arrayContentCardHidden.length === cardsAll.length){
-      menssagge += `
-        <h4>Evento no encontrado, por favor vuelva a intentarlo</h4>
-      `
-    }
-    menssageErr.innerHTML = menssagge; //Mensaje que solo se mostrara si no se encuentra lo ingresado en el input
-  }) */
-/* noResult = () =>{
-
-}; */
 
 
 // Checkbox Filter    
