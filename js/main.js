@@ -30,44 +30,69 @@ const allCards = document.querySelectorAll(".card-ctn")
 
 // input Search Filter
 const inputSearchEvents = document.getElementById("input-search-events");
+console.log("inputsearch", inputSearchEvents)
+
 
 inputSearchEvents.addEventListener("keyup", (event) =>{
-    let eventResult = document.querySelectorAll(".hidden")
-
+    let arrayContentCardHidden = [];
+    const cardContainer = document.getElementById("no");
+    let msg = ``;
     //let allCardsArray = Array.prototype.slice.call(allCards);
-    //console.log("allCardsArray", allCardsArray)
+    //console.log"allCardsArray", allCardsArray)
     //console.log("event.target.value", event.target.value)
     //console.log("event.key", event.key)
     // console.log({ card })
-    let filterCard = (list) =>{
-        list.forEach(card => {
+        allCards.forEach(card => {
             card.textContent
             .toLowerCase()
             .includes(event.target.value.toLowerCase())
                 ? card.classList.remove("hidden")
-                : card.classList.add("hidden")
-            })
-        };
-    filterCard(allCards);
+                : card.classList.add("hidden");
 
-    eventResult.length === allCards.length
-    ? noResult()
-    : null;
+/*             if(card.classList.contains("hidden")){
+                arrayContentCardHidden.push(card)
+                }*/
+            }); 
+let eventResult = document.querySelectorAll(".hidden");
+
+    if (eventResult.length === allCards.length){
+        msg += `
+            <div class="container text-center">
+                <div style="width: 250px; margin: 0 auto">
+                    <img style="width: 100%;" src="./assets/image/noEvents" alt="">
+                </div>
+                <p>Please try another search</p>
+            </div>
+            `
+        }
+    cardContainer.innerHTML = msg;
 });
 
+/* inputSearch.addEventListener("keyup", (event) =>{
+    let arrayContentCardHidden = [];
+    const menssageErr = document.getElementById("menssageError")
+    let menssagge= ``
+    cardsAll.forEach((card) => {
+  
+      card.textContent.toLowerCase().includes(event.target.value.toLowerCase())
+      ? card.classList.remove("hidden") // Si cae en true la sentencia anterior, ocurre esto
+      : card.classList.add("hidden") // Si cae en false la sentencia anterior, ocurre esto
+  
+      if(card.classList.contains("hidden")){
+        arrayContentCardHidden.push(card)
+      }
+    })
+  
+    if(arrayContentCardHidden.length === cardsAll.length){
+      menssagge += `
+        <h4>Evento no encontrado, por favor vuelva a intentarlo</h4>
+      `
+    }
+    menssageErr.innerHTML = menssagge; //Mensaje que solo se mostrara si no se encuentra lo ingresado en el input
+  }) */
+/* noResult = () =>{
 
-noResult = () =>{
-    console.log("das")
-    var cardContainer = document.getElementById("cards");
-    cardContainer.innerHTML = `
-        <div class="container text-center">
-            <div>
-                <img style="width: 100%;" src="./assets/image/noEvents" alt="">
-            </div>
-            <p>Please try another search</p>
-        </div>
-        `;
-};
+}; */
 
 
 // Checkbox Filter    
